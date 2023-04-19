@@ -1,14 +1,25 @@
 import React from 'react'
-import Input from '../../components/Inputs/Input'
-import Button from '../../components/Buttons/Button'
+import Input from '../../../components/Inputs/Input'
+import Button from '../../../components/Buttons/Button'
+import { useNavigate } from 'react-router-dom'
+import Navbar from '../../Navbar/Navbar';
 
-function handleClick(){
 
-}
 
 export default function RegistrationPage() {
+const navigate  = useNavigate();
+
+const handleClickLogin = () =>{
+    navigate("/login")
+};
+
+const handleClickRegister = () =>{
+    alert("register")
+}
+
     return (
         <>
+        <Navbar/>
             <h1>this is RegistrationPage page</h1>
             <Input type="text" placeholder="first name" />
             <Input type="text" placeholder="last name" />
@@ -17,7 +28,8 @@ export default function RegistrationPage() {
             <Input type="select" placeholder="enter gender" />
             <Input type="password" placeholder="password" />
             <Input type="password" placeholder="confirm password" />
-            <Button onClick={handleClick} buttonName="register" />
+            <Button buttonName="Register" onClick={handleClickRegister}/>
+            <Button onClick={handleClickLogin} buttonName="Already Have an account ?" />
         </>
     )
 }

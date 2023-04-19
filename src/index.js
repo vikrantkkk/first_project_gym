@@ -4,20 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import Classes from './pages/Classes';
-import Blogs from './pages/Blogs';
-import LoginPage from './pages/Auth/LoginPage';
-import RegistrationPage from './pages/Auth/RegistrationPage';
-import Navbar from './pages/Navbar';
+import Home from './pages/Home/Home';
+import AboutUs from './pages/About/AboutUs';
+import Classes from './pages/Class/Classes';
+import Blogs from './pages/Blog/Blogs';
+import LoginPage from './pages/Auth/Login/LoginPage';
+import RegistrationPage from './pages/Auth/Register/RegistrationPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Navbar/>
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/home' element={<Home />} />
