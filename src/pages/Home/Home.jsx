@@ -3,9 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import { Images } from "../../assets/Images";
 import styles from "./Home.module.css";
 import { useState } from "react";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-
+import Pricing from "../../components/Pricing/Pricing";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Footer from "../../components/Footer/Footer";
 function Home() {
   const [corousel, setCarousel] = useState(0);
 
@@ -36,15 +37,18 @@ function Home() {
           <span className={styles.body_word}>live</span>."
         </h1>
         <div className={styles.button_carousel}>
-          <ArrowBackIosIcon
-            onClick={handlePreImg}
-            className={styles.pre_btn}
-          />
+          <ArrowBackIosIcon onClick={handlePreImg} className={styles.pre_btn} />
           <ArrowForwardIosIcon
             onClick={handleNxtImg}
             className={styles.nxt_btn}
           />
         </div>
+      </div>
+      <div>
+        <Pricing />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );
