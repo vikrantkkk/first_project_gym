@@ -24,10 +24,10 @@ function Blogs() {
       <div>
         <Navbar />
       </div>
-      <section>
+      <section className={styles.blogs_container}>
         <div>
           <div className={styles.inner1_section1}>
-            <h1>Training Program section</h1>
+            <h1 className={styles.h1_tag}>Training Program section</h1>
           </div>
           <div className={styles.inner2_section1}>
             <span className={styles.training_txt}>Training Programs</span>
@@ -39,6 +39,7 @@ function Blogs() {
                 key={count.index}
                 src={blogs_Image[count + blogImage]}
                 alt="img"
+                className={styles.disp_img1}
               />
             ))}
           </div>

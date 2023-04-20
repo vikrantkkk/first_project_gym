@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Navbar from "../Navbar/Navbar";
 import { Images } from "../../assets/Images";
 import styles from "./Home.module.css";
@@ -47,10 +47,10 @@ function Home() {
         </div>
       </div>
       <div>
-        <Pricing/>
+        <Pricing />
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
