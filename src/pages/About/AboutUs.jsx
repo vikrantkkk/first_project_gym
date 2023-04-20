@@ -14,7 +14,8 @@ export default function AboutUs() {
       <section className={styles.container_about}>
         <div className={styles.section1_about}>
           <ol>
-            <h1>2) About us and why choose us section</h1>
+            <h1><span className={styles.about_txt}>About us </span>and why choose us section</h1>
+            {/* <span className={styles.about_txt}> About us and why choose us section</span> */}
             <p>
                we have to add youtube video here (as shown in below design )
             </p>

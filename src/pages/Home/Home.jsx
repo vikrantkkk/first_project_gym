@@ -3,9 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import { Images } from "../../assets/Images";
 import styles from "./Home.module.css";
 import { useState } from "react";
-import Pricing from "../../components/Pricing/Pricing";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Pricing from "../../components/Pricing/Pricing";
 import Footer from "../../components/Footer/Footer";
 function Home() {
   const [corousel, setCarousel] = useState(0);
@@ -29,7 +29,9 @@ function Home() {
           position: "relative",
         }}
       >
-        <Navbar />
+        <div>
+          <Navbar />
+        </div>
 
         <h1 className={styles.head_txt}>
           "Take Care of your <span className={styles.body_word}>body</span>. Its
@@ -45,10 +47,10 @@ function Home() {
         </div>
       </div>
       <div>
-        <Pricing />
+        <Pricing/>
       </div>
       <div>
-        <Footer />
+        <Footer/>
       </div>
     </>
   );

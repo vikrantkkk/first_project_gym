@@ -5,9 +5,9 @@ import styles from "./Blogs.module.css";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
-function Classes() {
+function Blogs() {
   const [blogImage, setBlogImage] = useState(0);
-  const blog_count_arr = [0,1,2,3,4];
+  const blog_count_arr = [0, 1, 2, 3, 4];
 
   const handlePreImg = () => {
     setBlogImage(
@@ -35,7 +35,11 @@ function Classes() {
 
           <div className={styles.blog_img_container}>
             {blog_count_arr.map((count) => (
-              <img key={count.index} src={blogs_Image[count + blogImage]} alt="img" />
+              <img
+                key={count.index}
+                src={blogs_Image[count + blogImage]}
+                alt="img"
+              />
             ))}
           </div>
           <div className={styles.scroll_button}>
@@ -48,4 +52,4 @@ function Classes() {
   );
 }
 
-export default Classes;
+export default Blogs;
