@@ -1,39 +1,58 @@
-import React, { useState } from "react";
-import Button from "../../../components/Buttons/Button";
-import Input from "../../../components/Inputs/Input";
-import { useNavigate } from "react-router-dom";
-import Navbar from "../../Navbar/Navbar";
+import React, { useState } from 'react'
+import styles from './LoginPage.module.css'
+// import login1 from '../../../assets/Images';
+import { useNavigate } from 'react-router-dom'
+import Button from '../../../components/Buttons/Button'
+import Navbar from '../../Navbar/Navbar'
 
-const handleClickLogin = () => {
-  alert("login page");
-};
+const LoginPage = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
-export default function LoginPage() {
-  const navigate = useNavigate();
+  const handleSubmit = e => {
+    e.preventDefault()
+    const userData = {
+      username,
+      password
+    }
+    localStorage.setItem('userData', JSON.stringify(userData))
+  }
+const navigate = useNavigate()
   const handleClickRegister = () => {
-    navigate("/register");
-  };
+    navigate('/register')
+  }
 
-  const [data, setData] = useState("");
   return (
-    <>
-      <div>
-        <Navbar />
-      </div>
-      <h1>this is login page</h1>
-      <Input
-        type="email"
-        onChange={(e) => setData(e.target.value)}
-        placeholder="vijay"
-      />
-      <Input
-        type="password"
-        onChange={(e) => setData(e.target.value)}
-        placeholder="vijay"
-      />
-      <Button onClick={handleClickLogin} buttonName="login" />
-      <Button onClick={handleClickRegister} buttonName="Register for Gym" />
-      <h1>{data}</h1>
-    </>
-  );
+<div> 
+  <Navbar/>
+    <div className={styles.login}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.label}>
+          Email:
+          <input
+            type='text'
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            type='password'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            className={styles.input}
+          />
+        </label>
+        <button className={styles.button} type='submit'>
+          Login{' '}
+        </button>
+        <Button  onClick={handleClickRegister} buttonName='Register' className={styles.ress}/>
+
+      </form>
+    </div>
+    </div>
+  )
 }
+
+export default LoginPage
