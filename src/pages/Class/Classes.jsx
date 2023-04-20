@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Navbar/Navbar";
 import { Class_Images } from "../../assets/Images";
 import styles from "./Classes.module.css";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -21,9 +20,6 @@ function Classes() {
 
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
       <section className={styles.class_container}>
         <div>
           <div className={styles.inner1_section1}>
@@ -35,7 +31,12 @@ function Classes() {
 
           <div className={styles.image_scroller}>
             {imageCountArray.map((count) => (
-              <img className={styles.disp_img} key={count} src={Class_Images[count + imgCount]} alt="img" />
+              <img
+                className={styles.disp_img}
+                key={count}
+                src={Class_Images[count + imgCount]}
+                alt="img"
+              />
             ))}
           </div>
           <div className={styles.scroll_button}>
@@ -43,7 +44,9 @@ function Classes() {
             <ArrowForwardIosIcon onClick={handleNxtImg} />
           </div>
         </div>
+     
       </section>
+ 
     </>
   );
 }

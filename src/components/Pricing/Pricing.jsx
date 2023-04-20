@@ -1,8 +1,15 @@
 import React from "react";
 import styles from "./Pricing.module.css";
 import Button from "../Buttons/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Pricing() {
+  const navigate = useNavigate()
+
+  const handle_login = ()=>{
+    navigate("/login")
+  }
+
   return (
     <>
       <div className={styles.container_pricing}>
@@ -20,8 +27,9 @@ export default function Pricing() {
           </div>
           <div className={styles.inner3_pricing}>
             <Button
-              buttonName="Get started"
+              buttonName="Get"
               className={styles.button_daypass}
+              onClick={handle_login}
             />
           </div>
         </div>
@@ -42,7 +50,7 @@ export default function Pricing() {
             <p>24 hour Access</p>
           </div>
           <div className={styles.inner3_month}>
-            <Button   className={styles.button1_daypass} buttonName="Get started" />
+            <Button   className={styles.button1_daypass} buttonName="Get"  onClick={handle_login}/>
           </div>
         </div>
         <div className={styles.daypass_membership}>

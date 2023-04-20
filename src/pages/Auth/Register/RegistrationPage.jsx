@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import styles from './RegistrationPage.module.css'
-import Navbar from '../../Navbar/Navbar'
+
 
 function Registration () {
   let initialValues
@@ -42,7 +42,6 @@ function Registration () {
 
   return (
     <>
-    <Navbar/>
       <div className={styles.regbg}>
         <div className={styles.maincontentreg}>
           <h1 style={{ color: 'white' }}>Register Here👍</h1>
@@ -101,6 +100,7 @@ function Registration () {
           </form>
         </div>
       </div>
+
     </>
   )
 }

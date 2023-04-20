@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Navbar/Navbar";
 import { blogs_Image } from "../../assets/Images";
 import styles from "./Blogs.module.css";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -21,9 +20,7 @@ function Blogs() {
 
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+    
       <section className={styles.blogs_container}>
         <div>
           <div className={styles.inner1_section1}>
@@ -48,7 +45,9 @@ function Blogs() {
             <ArrowForwardIosIcon onClick={handleNxtImg} />
           </div>
         </div>
+      
       </section>
+   
     </>
   );
 }

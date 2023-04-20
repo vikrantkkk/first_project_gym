@@ -1,16 +1,13 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import styles from "./About.module.css";
 import { Videos } from "../../assets/Videos";
 import { Videos1 } from "../../assets/Videos";
 import ReactPlayer from "react-player";
 
+
 export default function AboutUs() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
       <section className={styles.container_about}>
         <div className={styles.section1_about}></div>
       </section>
@@ -67,6 +64,7 @@ export default function AboutUs() {
             />
           </div>
         </div>
+   
       </section>
     </>
   );

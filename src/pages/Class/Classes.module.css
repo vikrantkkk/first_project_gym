@@ -34,3 +34,7 @@
     height:600px;
     margin: 0.5rem;
 }
+.footer_classes{
+    border: 5px solid black;
+    width: 100%;
+}

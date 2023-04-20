@@ -1,12 +1,9 @@
 import React, { Fragment } from "react";
-import Navbar from "../Navbar/Navbar";
 import { Images } from "../../assets/Images";
 import styles from "./Home.module.css";
 import { useState } from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import Pricing from "../../components/Pricing/Pricing";
-import Footer from "../../components/Footer/Footer";
 function Home() {
   const [corousel, setCarousel] = useState(0);
 
@@ -29,10 +26,7 @@ function Home() {
           position: "relative",
         }}
       >
-        <div>
-          <Navbar />
-        </div>
-
+     
         <h1 className={styles.head_txt}>
           "Take Care of your <span className={styles.body_word}>body</span>. Its
           the only place you have to{" "}
@@ -46,12 +40,7 @@ function Home() {
           />
         </div>
       </div>
-      <div>
-        <Pricing />
-      </div>
-      <div>
-        <Footer />
-      </div>
+
     </>
   );
 }
