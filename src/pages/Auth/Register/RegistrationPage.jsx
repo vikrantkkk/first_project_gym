@@ -17,9 +17,34 @@ function Registration () {
   const [userData, setUserData] = useState(initialValues)
 
   const handleSubmit = e => {
-    e.preventDefault()
-    addingUser(email, username, password)
-  }
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('user')) || [];
+    let isEmailRegistered = false;
+    let isUsernameTaken = false;
+  
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email === email) {
+        isEmailRegistered = true;
+        break;
+      }
+      if (users[i].username === username) {
+        isUsernameTaken = true;
+        break;
+      }
+    }
+  
+    if (isEmailRegistered) {
+      alert('Email already registered');
+    } else if (isUsernameTaken) {
+      alert('Username already taken');
+    } else{
+      addingUser(email, username, password)
+    }
+  };
+  
+
+      
+  
 
   const addingUser = (email, username, password) => {
     const newUser = {
@@ -42,9 +67,10 @@ function Registration () {
 
   return (
     <>
+    
       <div className={styles.regbg}>
         <div className={styles.maincontentreg}>
-          <h1 style={{ color: 'white' }}>Register Here👍</h1>
+          <h1 style={{ color: 'white' }}>Register Here</h1>
           <form onSubmit={handleSubmit}>
             <div className={styles.formlogin}>
               Email{' '}
@@ -81,6 +107,7 @@ function Registration () {
                 value={password}
                 required
                 onChange={e => setPassword(e.target.value)}
+                pattern='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\da-zA-Z]).{8,20}$'
               />
             </div>
 
@@ -100,7 +127,6 @@ function Registration () {
           </form>
         </div>
       </div>
-
     </>
   )
 }
