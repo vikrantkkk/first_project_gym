@@ -17,7 +17,7 @@ const Header = () => {
     navigate("/home");
   };
   const handleLogin = () => {
-        navigate("/login");
+        navigate("/register");
       };
   return (
     <div>

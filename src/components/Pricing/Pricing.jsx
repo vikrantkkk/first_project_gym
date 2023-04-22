@@ -1,5 +1,6 @@
 import React from 'react';
 import './pricing.css'
+import { Link } from 'react-router-dom';
 const PricingSection = () => {
   const pricingData = [
     {
@@ -27,7 +28,7 @@ const PricingSection = () => {
             <h3>{pricing.type}</h3>
             <div className="price">${pricing.price}/mo</div>
             <p>{pricing.description}</p>
-            <button className="button_pricing">Select Plan</button>
+            <button className="button_pricing"><Link to='/login'>Select Plan</Link></button>
           </div>
         </div>
       ))}
