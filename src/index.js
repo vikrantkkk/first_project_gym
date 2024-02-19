@@ -10,6 +10,7 @@ import LoginPage from "./pages/Auth/Login/LoginPage";
 import RegistrationPage from "./pages/Auth/Register/RegistrationPage";
 import Navbar from "./pages/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,7 @@ root.render(
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<App/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/classes" element={<Classes />} />
@@ -27,4 +28,5 @@ root.render(
       </Routes>
       <Footer />
     </BrowserRouter>
-  </React.StrictMode>)
+  </React.StrictMode>
+);
